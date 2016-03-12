@@ -1,3 +1,3 @@
 class Domain < ActiveRecord::Base
-  attr_accessible :domain_name
+  attr_accessible :name
 end
