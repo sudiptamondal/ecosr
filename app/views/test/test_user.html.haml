@@ -1,0 +1,23 @@
+%form{action: "/user/create", method: "post"}
+  first_name
+  = text_field_tag :first_name
+  %br/
+  last_name
+  = text_field_tag :last_name
+  %br/
+  email
+  = text_field_tag :email
+  %br/
+  contact
+  = text_field_tag :contact
+  %br/
+  password
+  = text_field_tag :password
+  %br/
+  city
+  = text_field_tag :city
+  %br/
+  state
+  = text_field_tag :state
+  %br/
+  = submit_tag("Submit")
