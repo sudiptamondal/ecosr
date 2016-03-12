@@ -59,9 +59,6 @@
     = f.label :website
     %br/
     = f.text_field :website
-  .field
-    = f.label :otp
-    %br/
-    = f.text_field :otp  
+    %input#ng_org_otp{ type: "text", size: "30", name:"ng_org[otp]"}
   .actions
     = f.submit
