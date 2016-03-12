@@ -18,6 +18,7 @@
 #  website             :string(255)
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  otp                 :string(255)
 #
 
 class NgOrg < ActiveRecord::Base
