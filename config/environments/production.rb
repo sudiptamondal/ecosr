@@ -68,7 +68,7 @@ Ecosr::Application.configure do
 
 
   config.action_mailer.default_url_options = { host: 'boiling-brushlands-95795.herokuapp.com' }
-  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true
@@ -80,7 +80,8 @@ Ecosr::Application.configure do
     :domain             => 'gmail.com', #you can also use google.com
     :authentication     => :plain,
     :user_name          => 'chdhackathon@gmail.com',
-    :password           => 'chdhackathon1'
+    :password           => 'chdhackathon1',
+    :openssl_verify_mode  => 'none'
   }
 
 
