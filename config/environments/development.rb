@@ -40,9 +40,9 @@ Ecosr::Application.configure do
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.smtp_settings = {
-    :enable_starttls_auto => true,  
+    # :enable_starttls_auto => true,  
     :address            => 'smtp.gmail.com',
-    :port               => 587,
+    :port               => 465,
     :tls                  => true,
     :domain             => 'gmail.com', #you can also use google.com
     :authentication     => :plain,
@@ -50,5 +50,4 @@ Ecosr::Application.configure do
     :password           => 'chdhackathon1',
     :openssl_verify_mode  => 'none'
   }
-
 end
