@@ -2,8 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.20'
 
-gem 'sqlite3'
 
+group :production do
+  gem 'pg'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -19,6 +21,7 @@ gem 'jquery-rails'
 
 group :development do
   gem 'thin'
+  gem 'sqlite3'
   gem 'better_errors'
   gem 'html2haml'
   gem 'binding_of_caller'
