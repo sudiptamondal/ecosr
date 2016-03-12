@@ -1,8 +1,5 @@
 Ecosr::Application.routes.draw do
   resources :ng_orgs
-
-
-  resources :ngos
   resources :domains
 
   devise_for :admin_users, ActiveAdmin::Devise.config
