@@ -1,2 +1,289 @@
-%h1 Static#home
-%p Find me in app/views/static/home.html.erb
+%nav#topNav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand.page-scroll{:href => "#first"}
+        %i.ion-ios-analytics-outline
+        Landing Zero
+    #bs-navbar.navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li
+          %a.page-scroll{:href => "#one"} Intro
+        %li
+          %a.page-scroll{:href => "#two"} Highlights
+        %li
+          %a.page-scroll{:href => "#three"} Gallery
+        %li
+          %a.page-scroll{:href => "#four"} Features
+        %li
+          %a.page-scroll{:href => "#last"} Contact
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a.page-scroll{"data-toggle" => "modal", :href => "#aboutModal", :title => "A free Bootstrap video landing theme"} About
+%header#first
+  .header-content
+    .inner
+      %h1.cursive ECOSR
+      %h4 Social Responsiblity
+      %hr/
+      / %a#toggleVideo.btn.btn-primary.btn-xl{"data-toggle" => "collapse", :href => "#video-background"} Toggle Video
+      %a.btn.btn-primary.btn-xl{:href=>"/ng_orgs/new", style:"color:white"} Are you a NGO ? 
+      %a.btn.btn-primary.btn-xl{:href => "/users/sign_up", style:"color:white"} Are you a Volunteer ?
+  %video#video-background.fillWidth.fadeIn.wow.collapse.in{:autoplay => "", "data-wow-delay" => "0.5s", :loop => "", :poster => "https://s3-us-west-2.amazonaws.com/coverr/poster/Traffic-blurred2.jpg"}
+    %source{:src => "https://s3-us-west-2.amazonaws.com/coverr/mp4/Traffic-blurred2.mp4", :type => "video/mp4"}
+      Your browser does not support the video tag. I suggest you upgrade your browser.
+%section#one.bg-primary
+  .container
+    .row
+      .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.text-center
+        %h2.margin-top-0.text-primary Built On The Bootstrap Grid
+        %br/
+        %p.text-faded
+          Bootstrap's responsive grid comes in 4 sizes or "breakpoints": tiny (xs), small(sm), medium(md) and large(lg). These 4 grid sizes enable you create responsive layouts that behave accordingly on different devices.
+        %a.btn.btn-default.btn-xl.page-scroll{:href => "#three"} Learn More
+%section#two
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2.margin-top-0.text-primary Flexible Layouts
+        %hr.primary/
+  .container
+    .row
+      .col-lg-4.col-md-4.text-center
+        .feature
+          %i.icon-lg.ion-android-laptop.wow.fadeIn{"data-wow-delay" => ".3s"}
+          %h3 Responsive
+          %p.text-muted Your site looks good everywhere
+      .col-lg-4.col-md-4.text-center
+        .feature
+          %i.icon-lg.ion-social-sass.wow.fadeInUp{"data-wow-delay" => ".2s"}
+          %h3 Customizable
+          %p.text-muted Easy to theme and customize with SASS
+      .col-lg-4.col-md-4.text-center
+        .feature
+          %i.icon-lg.ion-ios-star-outline.wow.fadeIn{"data-wow-delay" => ".3s"}
+          %h3 Consistent
+          %p.text-muted A mature, well-tested, stable codebase
+%section#three.no-padding
+  .container-fluid
+    .row.no-gutter
+      .col-lg-4.col-sm-6
+        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/unsplash/regular/photo-1430916273432-273c2db881a0%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3Df047e8284d2fdc1df0fd57a5d294614d", "data-toggle" => "modal", :href => "#galleryModal"}
+          %img.img-responsive{:alt => "Image 1", :src => "//splashbase.s3.amazonaws.com/unsplash/regular/photo-1430916273432-273c2db881a0%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3Df047e8284d2fdc1df0fd57a5d294614d"}/
+          .gallery-box-caption
+            .gallery-box-content
+              %div
+                %i.icon-lg.ion-ios-search
+      .col-lg-4.col-sm-6
+        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/getrefe/regular/tumblr_nqune4OGHl1slhhf0o1_1280.jpg", "data-toggle" => "modal", :href => "#galleryModal"}
+          %img.img-responsive{:alt => "Image 2", :src => "//splashbase.s3.amazonaws.com/getrefe/regular/tumblr_nqune4OGHl1slhhf0o1_1280.jpg"}/
+          .gallery-box-caption
+            .gallery-box-content
+              %div
+                %i.icon-lg.ion-ios-search
+      .col-lg-4.col-sm-6
+        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/unsplash/regular/photo-1433959352364-9314c5b6eb0b%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3D3b9bc6caa190332e91472b6828a120a4", "data-toggle" => "modal", :href => "#galleryModal"}
+          %img.img-responsive{:alt => "Image 3", :src => "//splashbase.s3.amazonaws.com/unsplash/regular/photo-1433959352364-9314c5b6eb0b%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3D3b9bc6caa190332e91472b6828a120a4"}/
+          .gallery-box-caption
+            .gallery-box-content
+              %div
+                %i.icon-lg.ion-ios-search
+      .col-lg-4.col-sm-6
+        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-moto-drawing-illusion-nabeel-1440x960.jpg", "data-toggle" => "modal", :href => "#galleryModal"}
+          %img.img-responsive{:alt => "Image 4", :src => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-moto-drawing-illusion-nabeel-1440x960.jpg"}/
+          .gallery-box-caption
+            .gallery-box-content
+              %div
+                %i.icon-lg.ion-ios-search
+      .col-lg-4.col-sm-6
+        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg", "data-toggle" => "modal", :href => "#galleryModal"}
+          %img.img-responsive{:alt => "Image 5", :src => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg"}/
+          .gallery-box-caption
+            .gallery-box-content
+              %div
+                %i.icon-lg.ion-ios-search
+      .col-lg-4.col-sm-6
+        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg", "data-toggle" => "modal", :href => "#galleryModal"}
+          %img.img-responsive{:alt => "Image 6", :src => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg"}/
+          .gallery-box-caption
+            .gallery-box-content
+              %div
+                %i.icon-lg.ion-ios-search
+%section#four.container-fluid
+  .row
+    .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+      %h2.text-center.text-primary Features
+      %hr/
+      .media.wow.fadeInRight
+        %h3 Simple
+        .media-body.media-middle
+          %p What could be easier? Get started fast with this landing page starter theme.
+        .media-right
+          %i.icon-lg.ion-ios-bolt-outline
+      %hr/
+      .media.wow.fadeIn
+        %h3 Free
+        .media-left
+          %a{"data-target" => "#alertModal", "data-toggle" => "modal", :href => "#alertModal"}
+            %i.icon-lg.ion-ios-cloud-download-outline
+        .media-body.media-middle
+          %p Yes, please. Grab it for yourself, and make something awesome with this.
+      %hr/
+      .media.wow.fadeInRight
+        %h3 Unique
+        .media-body.media-middle
+          %p Because you don't want your Bootstrap site, to look like a Bootstrap site.
+        .media-right
+          %i.icon-lg.ion-ios-snowy
+      %hr/
+      .media.wow.fadeIn
+        %h3 Popular
+        .media-left
+          %i.icon-lg.ion-ios-heart-outline
+        .media-body.media-middle
+          %p There's good reason why Bootstrap is the most used frontend framework in the world.
+      %hr/
+      .media.wow.fadeInRight
+        %h3 Tested
+        .media-body.media-middle
+          %p Bootstrap is matured and well-tested. It's a stable codebase that provides consistency.
+        .media-right
+          %i.icon-lg.ion-ios-flask-outline
+%aside.bg-dark
+  .container.text-center
+    .call-to-action
+      %h2.text-primary Get Started
+      %a.btn.btn-default.btn-lg.wow.flipInX{:href => "http://www.bootstrapzero.com/bootstrap-template/landing-zero", :target => "ext"} Free Download
+    %br/
+    %hr/
+    %br/
+    .row
+      .col-lg-10.col-lg-offset-1
+        .row
+          %h6.wide-space.text-center BOOTSTRAP IS BASED ON THESE STANDARDS
+          .col-sm-3.col-xs-6.text-center
+            %i.icon-lg.ion-social-html5-outline{:title => "html 5"}
+          .col-sm-3.col-xs-6.text-center
+            %i.icon-lg.ion-social-sass{:title => "sass"}
+          .col-sm-3.col-xs-6.text-center
+            %i.icon-lg.ion-social-javascript-outline{:title => "javascript"}
+          .col-sm-3.col-xs-6.text-center
+            %i.icon-lg.ion-social-css3-outline{:title => "css 3"}
+%section#last
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.text-center
+        %h2.margin-top-0.wow.fadeIn Get in Touch
+        %hr.primary/
+        %p We love feedback. Fill out the form below and we'll get back to you as soon as possible.
+      .col-lg-10.col-lg-offset-1.text-center
+        %form.contact-form.row
+          .col-md-4
+            %label
+            %input.form-control{:placeholder => "Name", :type => "text"}/
+          .col-md-4
+            %label
+            %input.form-control{:placeholder => "Email", :type => "text"}/
+          .col-md-4
+            %label
+            %input.form-control{:placeholder => "Phone", :type => "text"}/
+          .col-md-12
+            %label
+            %textarea.form-control{:placeholder => "Your message here..", :rows => "9"}
+          .col-md-4.col-md-offset-4
+            %label
+            %button.btn.btn-primary.btn-block.btn-lg{"data-target" => "#alertModal", "data-toggle" => "modal", :type => "button"}
+              Send
+              %i.ion-android-arrow-forward
+%footer#footer
+  .container-fluid
+    .row
+      .col-xs-6.col-sm-3.column
+        %h4 Information
+        %ul.list-unstyled
+          %li
+            %a{:href => ""} Products
+          %li
+            %a{:href => ""} Services
+          %li
+            %a{:href => ""} Benefits
+          %li
+            %a{:href => ""} Developers
+      .col-xs-6.col-sm-3.column
+        %h4 About
+        %ul.list-unstyled
+          %li
+            %a{:href => "#"} Contact Us
+          %li
+            %a{:href => "#"} Delivery Information
+          %li
+            %a{:href => "#"} Privacy Policy
+          %li
+            %a{:href => "#"} Terms & Conditions
+      .col-xs-12.col-sm-3.column
+        %h4 Stay Posted
+        %form
+          .form-group
+            %input.form-control{:placeholder => "Tell us your email", :title => "No spam, we promise!", :type => "text"}/
+          .form-group
+            %button.btn.btn-primary{"data-target" => "#alertModal", "data-toggle" => "modal", :type => "button"} Subscribe for updates
+      .col-xs-12.col-sm-3.text-right
+        %h4 Follow
+        %ul.list-inline
+          %li
+            %a{:href => "", :rel => "nofollow", :title => "Twitter"}>
+              %i.icon-lg.ion-social-twitter-outline
+             
+          %li
+            %a{:href => "", :rel => "nofollow", :title => "Facebook"}>
+              %i.icon-lg.ion-social-facebook-outline
+             
+          %li
+            %a{:href => "", :rel => "nofollow", :title => "Dribble"}
+              %i.icon-lg.ion-social-dribbble-outline
+    %br/
+    %span.pull-right.text-muted.small
+      %a{:href => "http://www.bootstrapzero.com"} Landing Zero by BootstrapZero
+      ©2015 Company
+#galleryModal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-body
+        %img#galleryImage.img-responsive{:src => "//placehold.it/1200x700/222?text=..."}/
+        %p
+          %br/
+          %button.btn.btn-primary.btn-lg.center-block{"aria-hidden" => "true", "data-dismiss" => "modal"}
+            Close
+            %i.ion-android-close
+#aboutModal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-body
+        %h2.text-center Landing Zero Theme
+        %h5.text-center
+          A free, responsive landing page theme built by BootstrapZero.
+        %p.text-justify
+          This is a single-page Bootstrap template with a sleek dark/grey color scheme, accent color and smooth scrolling.
+          There are vertical content sections with subtle animations that are activated when scrolled into view using the jQuery WOW plugin. There is also a gallery with modals
+          that work nicely to showcase your work portfolio. Other features include a contact form, email subscribe form, multi-column footer. Uses Questrial Google Font and Ionicons.
+        %p.text-center
+          %a{:href => "http://www.bootstrapzero.com"} Download at BootstrapZero
+        %br/
+        %button.btn.btn-primary.btn-lg.center-block{"aria-hidden" => "true", "data-dismiss" => "modal"} OK
+#alertModal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-body
+        %h2.text-center Nice Job!
+        %p.text-center You clicked the button, but it doesn't actually go anywhere because this is only a demo.
+        %p.text-center
+          %a{:href => "http://www.bootstrapzero.com"} Learn more at BootstrapZero
+        %br/
+        %button.btn.btn-primary.btn-lg.center-block{"aria-hidden" => "true", "data-dismiss" => "modal"}
+          OK
+          %i.ion-android-close
+/ scripts loaded here from cdn for performance

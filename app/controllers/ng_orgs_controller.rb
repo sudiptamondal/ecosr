@@ -4,9 +4,11 @@ class NgOrgsController < ApplicationController
   def index
     @ng_orgs = NgOrg.all
 
+    @data = "JSON_CALLBACK([#{@ng_orgs.to_json}]);"
+
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @ng_orgs }
+      format.json { render text: @data }
     end
   end
 

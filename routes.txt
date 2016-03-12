@@ -1,134 +1,151 @@
-                       ng_orgs GET    /ng_orgs(.:format)                        ng_orgs#index
-                               POST   /ng_orgs(.:format)                        ng_orgs#create
-                    new_ng_org GET    /ng_orgs/new(.:format)                    ng_orgs#new
-                   edit_ng_org GET    /ng_orgs/:id/edit(.:format)               ng_orgs#edit
-                        ng_org GET    /ng_orgs/:id(.:format)                    ng_orgs#show
-                               PUT    /ng_orgs/:id(.:format)                    ng_orgs#update
-                               DELETE /ng_orgs/:id(.:format)                    ng_orgs#destroy
-                       domains GET    /domains(.:format)                        domains#index
-                               POST   /domains(.:format)                        domains#create
-                    new_domain GET    /domains/new(.:format)                    domains#new
-                   edit_domain GET    /domains/:id/edit(.:format)               domains#edit
-                        domain GET    /domains/:id(.:format)                    domains#show
-                               PUT    /domains/:id(.:format)                    domains#update
-                               DELETE /domains/:id(.:format)                    domains#destroy
-                                      /ngos/find/:domain(.:format)              NgOrgs#find_ngos_by_domain
-        new_admin_user_session GET    /admin/login(.:format)                    active_admin/devise/sessions#new
-            admin_user_session POST   /admin/login(.:format)                    active_admin/devise/sessions#create
-    destroy_admin_user_session GET    /admin/logout(.:format)                   active_admin/devise/sessions#destroy
-           admin_user_password POST   /admin/password(.:format)                 active_admin/devise/passwords#create
-       new_admin_user_password GET    /admin/password/new(.:format)             active_admin/devise/passwords#new
-      edit_admin_user_password GET    /admin/password/edit(.:format)            active_admin/devise/passwords#edit
-                               PUT    /admin/password(.:format)                 active_admin/devise/passwords#update
-                    admin_root        /admin(.:format)                          admin/dashboard#index
-                          root        /                                         dashboard#index
-batch_action_admin_admin_users POST   /admin/admin_users/batch_action(.:format) admin/admin_users#batch_action
-             admin_admin_users GET    /admin/admin_users(.:format)              admin/admin_users#index
-                               POST   /admin/admin_users(.:format)              admin/admin_users#create
-          new_admin_admin_user GET    /admin/admin_users/new(.:format)          admin/admin_users#new
-         edit_admin_admin_user GET    /admin/admin_users/:id/edit(.:format)     admin/admin_users#edit
-              admin_admin_user GET    /admin/admin_users/:id(.:format)          admin/admin_users#show
-                               PUT    /admin/admin_users/:id(.:format)          admin/admin_users#update
-                               DELETE /admin/admin_users/:id(.:format)          admin/admin_users#destroy
-      batch_action_admin_users POST   /admin/users/batch_action(.:format)       admin/users#batch_action
-                   admin_users GET    /admin/users(.:format)                    admin/users#index
-                               POST   /admin/users(.:format)                    admin/users#create
-                new_admin_user GET    /admin/users/new(.:format)                admin/users#new
-               edit_admin_user GET    /admin/users/:id/edit(.:format)           admin/users#edit
-                    admin_user GET    /admin/users/:id(.:format)                admin/users#show
-                               PUT    /admin/users/:id(.:format)                admin/users#update
-                               DELETE /admin/users/:id(.:format)                admin/users#destroy
-    batch_action_admin_domains POST   /admin/domains/batch_action(.:format)     admin/domains#batch_action
-                 admin_domains GET    /admin/domains(.:format)                  admin/domains#index
-                               POST   /admin/domains(.:format)                  admin/domains#create
-              new_admin_domain GET    /admin/domains/new(.:format)              admin/domains#new
-             edit_admin_domain GET    /admin/domains/:id/edit(.:format)         admin/domains#edit
-                  admin_domain GET    /admin/domains/:id(.:format)              admin/domains#show
-                               PUT    /admin/domains/:id(.:format)              admin/domains#update
-                               DELETE /admin/domains/:id(.:format)              admin/domains#destroy
-               admin_dashboard        /admin/dashboard(.:format)                admin/dashboard#index
-    batch_action_admin_ng_orgs POST   /admin/ng_orgs/batch_action(.:format)     admin/ng_orgs#batch_action
-                 admin_ng_orgs GET    /admin/ng_orgs(.:format)                  admin/ng_orgs#index
-                               POST   /admin/ng_orgs(.:format)                  admin/ng_orgs#create
-              new_admin_ng_org GET    /admin/ng_orgs/new(.:format)              admin/ng_orgs#new
-             edit_admin_ng_org GET    /admin/ng_orgs/:id/edit(.:format)         admin/ng_orgs#edit
-                  admin_ng_org GET    /admin/ng_orgs/:id(.:format)              admin/ng_orgs#show
-                               PUT    /admin/ng_orgs/:id(.:format)              admin/ng_orgs#update
-                               DELETE /admin/ng_orgs/:id(.:format)              admin/ng_orgs#destroy
-   batch_action_admin_comments POST   /admin/comments/batch_action(.:format)    admin/comments#batch_action
-                admin_comments GET    /admin/comments(.:format)                 admin/comments#index
-                               POST   /admin/comments(.:format)                 admin/comments#create
-                 admin_comment GET    /admin/comments/:id(.:format)             admin/comments#show
-         batch_action_comments POST   /comments/batch_action(.:format)          comments#batch_action
-                      comments GET    /comments(.:format)                       comments#index
-                               POST   /comments(.:format)                       comments#create
-                       comment GET    /comments/:id(.:format)                   comments#show
-                   user_create POST   /user/create(.:format)                    user#create
-                   user_update GET    /user/update(.:format)                    user#update
-                   user_delete GET    /user/delete(.:format)                    user#delete
-                     user_show GET    /user/show(.:format)                      user#show
-              new_user_session GET    /users/sign_in(.:format)                  devise/sessions#new
-                  user_session POST   /users/sign_in(.:format)                  devise/sessions#create
-          destroy_user_session GET    /users/sign_out(.:format)                 devise/sessions#destroy
-                 user_password POST   /users/password(.:format)                 devise/passwords#create
-             new_user_password GET    /users/password/new(.:format)             devise/passwords#new
-            edit_user_password GET    /users/password/edit(.:format)            devise/passwords#edit
-                               PUT    /users/password(.:format)                 devise/passwords#update
-      cancel_user_registration GET    /users/cancel(.:format)                   devise/registrations#cancel
-             user_registration POST   /users(.:format)                          devise/registrations#create
-         new_user_registration GET    /users/sign_up(.:format)                  devise/registrations#new
-        edit_user_registration GET    /users/edit(.:format)                     devise/registrations#edit
-                               PUT    /users(.:format)                          devise/registrations#update
-                               DELETE /users(.:format)                          devise/registrations#destroy
-             user_confirmation POST   /users/confirmation(.:format)             devise/confirmations#create
-         new_user_confirmation GET    /users/confirmation/new(.:format)         devise/confirmations#new
-                               GET    /users/confirmation(.:format)             devise/confirmations#show
-                    admin_root        /admin(.:format)                          admin/dashboard#index
-                          root        /                                         dashboard#index
-                               POST   /admin/admin_users/batch_action(.:format) admin/admin_users#batch_action
-                               GET    /admin/admin_users(.:format)              admin/admin_users#index
-                               POST   /admin/admin_users(.:format)              admin/admin_users#create
-                               GET    /admin/admin_users/new(.:format)          admin/admin_users#new
-                               GET    /admin/admin_users/:id/edit(.:format)     admin/admin_users#edit
-                               GET    /admin/admin_users/:id(.:format)          admin/admin_users#show
-                               PUT    /admin/admin_users/:id(.:format)          admin/admin_users#update
-                               DELETE /admin/admin_users/:id(.:format)          admin/admin_users#destroy
-                               POST   /admin/users/batch_action(.:format)       admin/users#batch_action
-                               GET    /admin/users(.:format)                    admin/users#index
-                               POST   /admin/users(.:format)                    admin/users#create
-                               GET    /admin/users/new(.:format)                admin/users#new
-                               GET    /admin/users/:id/edit(.:format)           admin/users#edit
-                               GET    /admin/users/:id(.:format)                admin/users#show
-                               PUT    /admin/users/:id(.:format)                admin/users#update
-                               DELETE /admin/users/:id(.:format)                admin/users#destroy
-                               POST   /admin/domains/batch_action(.:format)     admin/domains#batch_action
-                               GET    /admin/domains(.:format)                  admin/domains#index
-                               POST   /admin/domains(.:format)                  admin/domains#create
-                               GET    /admin/domains/new(.:format)              admin/domains#new
-                               GET    /admin/domains/:id/edit(.:format)         admin/domains#edit
-                               GET    /admin/domains/:id(.:format)              admin/domains#show
-                               PUT    /admin/domains/:id(.:format)              admin/domains#update
-                               DELETE /admin/domains/:id(.:format)              admin/domains#destroy
-                                      /admin/dashboard(.:format)                admin/dashboard#index
-                               POST   /admin/ng_orgs/batch_action(.:format)     admin/ng_orgs#batch_action
-                               GET    /admin/ng_orgs(.:format)                  admin/ng_orgs#index
-                               POST   /admin/ng_orgs(.:format)                  admin/ng_orgs#create
-                               GET    /admin/ng_orgs/new(.:format)              admin/ng_orgs#new
-                               GET    /admin/ng_orgs/:id/edit(.:format)         admin/ng_orgs#edit
-                               GET    /admin/ng_orgs/:id(.:format)              admin/ng_orgs#show
-                               PUT    /admin/ng_orgs/:id(.:format)              admin/ng_orgs#update
-                               DELETE /admin/ng_orgs/:id(.:format)              admin/ng_orgs#destroy
-                               POST   /admin/comments/batch_action(.:format)    admin/comments#batch_action
-                               GET    /admin/comments(.:format)                 admin/comments#index
-                               POST   /admin/comments(.:format)                 admin/comments#create
-                               GET    /admin/comments/:id(.:format)             admin/comments#show
-                               POST   /comments/batch_action(.:format)          comments#batch_action
-                               GET    /comments(.:format)                       comments#index
-                               POST   /comments(.:format)                       comments#create
-                               GET    /comments/:id(.:format)                   comments#show
-                          root        /                                         static#home
-                   static_home GET    /static/home(.:format)                    static#home
-                   static_help GET    /static/help(.:format)                    static#help
-                  static_about GET    /static/about(.:format)                   static#about
-              static_contactus GET    /static/contactus(.:format)               static#contactus
-                test_test_user        /test/test_user(.:format)                 test#test_user
+                          root        /                                          static#home
+                       ng_orgs GET    /ng_orgs(.:format)                         ng_orgs#index
+                               POST   /ng_orgs(.:format)                         ng_orgs#create
+                    new_ng_org GET    /ng_orgs/new(.:format)                     ng_orgs#new
+                   edit_ng_org GET    /ng_orgs/:id/edit(.:format)                ng_orgs#edit
+                        ng_org GET    /ng_orgs/:id(.:format)                     ng_orgs#show
+                               PUT    /ng_orgs/:id(.:format)                     ng_orgs#update
+                               DELETE /ng_orgs/:id(.:format)                     ng_orgs#destroy
+                       domains GET    /domains(.:format)                         domains#index
+                               POST   /domains(.:format)                         domains#create
+                    new_domain GET    /domains/new(.:format)                     domains#new
+                   edit_domain GET    /domains/:id/edit(.:format)                domains#edit
+                        domain GET    /domains/:id(.:format)                     domains#show
+                               PUT    /domains/:id(.:format)                     domains#update
+                               DELETE /domains/:id(.:format)                     domains#destroy
+              new_user_session GET    /users/sign_in(.:format)                   devise/sessions#new
+                  user_session POST   /users/sign_in(.:format)                   devise/sessions#create
+          destroy_user_session GET    /users/sign_out(.:format)                  devise/sessions#destroy
+                 user_password POST   /users/password(.:format)                  devise/passwords#create
+             new_user_password GET    /users/password/new(.:format)              devise/passwords#new
+            edit_user_password GET    /users/password/edit(.:format)             devise/passwords#edit
+                               PUT    /users/password(.:format)                  devise/passwords#update
+      cancel_user_registration GET    /users/cancel(.:format)                    devise/registrations#cancel
+             user_registration POST   /users(.:format)                           devise/registrations#create
+         new_user_registration GET    /users/sign_up(.:format)                   devise/registrations#new
+        edit_user_registration GET    /users/edit(.:format)                      devise/registrations#edit
+                               PUT    /users(.:format)                           devise/registrations#update
+                               DELETE /users(.:format)                           devise/registrations#destroy
+             user_confirmation POST   /users/confirmation(.:format)              devise/confirmations#create
+         new_user_confirmation GET    /users/confirmation/new(.:format)          devise/confirmations#new
+                               GET    /users/confirmation(.:format)              devise/confirmations#show
+                                      /verify/ngo/:registration_number(.:format) Verifies#show
+                                      /ngos/find/:domain(.:format)               NgOrgs#find_ngos_by_domain
+        new_admin_user_session GET    /admin/login(.:format)                     active_admin/devise/sessions#new
+            admin_user_session POST   /admin/login(.:format)                     active_admin/devise/sessions#create
+    destroy_admin_user_session GET    /admin/logout(.:format)                    active_admin/devise/sessions#destroy
+           admin_user_password POST   /admin/password(.:format)                  active_admin/devise/passwords#create
+       new_admin_user_password GET    /admin/password/new(.:format)              active_admin/devise/passwords#new
+      edit_admin_user_password GET    /admin/password/edit(.:format)             active_admin/devise/passwords#edit
+                               PUT    /admin/password(.:format)                  active_admin/devise/passwords#update
+                    admin_root        /admin(.:format)                           admin/dashboard#index
+                          root        /                                          dashboard#index
+batch_action_admin_admin_users POST   /admin/admin_users/batch_action(.:format)  admin/admin_users#batch_action
+             admin_admin_users GET    /admin/admin_users(.:format)               admin/admin_users#index
+                               POST   /admin/admin_users(.:format)               admin/admin_users#create
+          new_admin_admin_user GET    /admin/admin_users/new(.:format)           admin/admin_users#new
+         edit_admin_admin_user GET    /admin/admin_users/:id/edit(.:format)      admin/admin_users#edit
+              admin_admin_user GET    /admin/admin_users/:id(.:format)           admin/admin_users#show
+                               PUT    /admin/admin_users/:id(.:format)           admin/admin_users#update
+                               DELETE /admin/admin_users/:id(.:format)           admin/admin_users#destroy
+      batch_action_admin_users POST   /admin/users/batch_action(.:format)        admin/users#batch_action
+                   admin_users GET    /admin/users(.:format)                     admin/users#index
+                               POST   /admin/users(.:format)                     admin/users#create
+                new_admin_user GET    /admin/users/new(.:format)                 admin/users#new
+               edit_admin_user GET    /admin/users/:id/edit(.:format)            admin/users#edit
+                    admin_user GET    /admin/users/:id(.:format)                 admin/users#show
+                               PUT    /admin/users/:id(.:format)                 admin/users#update
+                               DELETE /admin/users/:id(.:format)                 admin/users#destroy
+    batch_action_admin_domains POST   /admin/domains/batch_action(.:format)      admin/domains#batch_action
+                 admin_domains GET    /admin/domains(.:format)                   admin/domains#index
+                               POST   /admin/domains(.:format)                   admin/domains#create
+              new_admin_domain GET    /admin/domains/new(.:format)               admin/domains#new
+             edit_admin_domain GET    /admin/domains/:id/edit(.:format)          admin/domains#edit
+                  admin_domain GET    /admin/domains/:id(.:format)               admin/domains#show
+                               PUT    /admin/domains/:id(.:format)               admin/domains#update
+                               DELETE /admin/domains/:id(.:format)               admin/domains#destroy
+   batch_action_admin_verifies POST   /admin/verifies/batch_action(.:format)     admin/verifies#batch_action
+                admin_verifies GET    /admin/verifies(.:format)                  admin/verifies#index
+                               POST   /admin/verifies(.:format)                  admin/verifies#create
+              new_admin_verify GET    /admin/verifies/new(.:format)              admin/verifies#new
+             edit_admin_verify GET    /admin/verifies/:id/edit(.:format)         admin/verifies#edit
+                  admin_verify GET    /admin/verifies/:id(.:format)              admin/verifies#show
+                               PUT    /admin/verifies/:id(.:format)              admin/verifies#update
+                               DELETE /admin/verifies/:id(.:format)              admin/verifies#destroy
+               admin_dashboard        /admin/dashboard(.:format)                 admin/dashboard#index
+    batch_action_admin_ng_orgs POST   /admin/ng_orgs/batch_action(.:format)      admin/ng_orgs#batch_action
+                 admin_ng_orgs GET    /admin/ng_orgs(.:format)                   admin/ng_orgs#index
+                               POST   /admin/ng_orgs(.:format)                   admin/ng_orgs#create
+              new_admin_ng_org GET    /admin/ng_orgs/new(.:format)               admin/ng_orgs#new
+             edit_admin_ng_org GET    /admin/ng_orgs/:id/edit(.:format)          admin/ng_orgs#edit
+                  admin_ng_org GET    /admin/ng_orgs/:id(.:format)               admin/ng_orgs#show
+                               PUT    /admin/ng_orgs/:id(.:format)               admin/ng_orgs#update
+                               DELETE /admin/ng_orgs/:id(.:format)               admin/ng_orgs#destroy
+   batch_action_admin_comments POST   /admin/comments/batch_action(.:format)     admin/comments#batch_action
+                admin_comments GET    /admin/comments(.:format)                  admin/comments#index
+                               POST   /admin/comments(.:format)                  admin/comments#create
+                 admin_comment GET    /admin/comments/:id(.:format)              admin/comments#show
+         batch_action_comments POST   /comments/batch_action(.:format)           comments#batch_action
+                      comments GET    /comments(.:format)                        comments#index
+                               POST   /comments(.:format)                        comments#create
+                       comment GET    /comments/:id(.:format)                    comments#show
+                   user_create POST   /user/create(.:format)                     user#create
+                   user_update GET    /user/update(.:format)                     user#update
+                   user_delete GET    /user/delete(.:format)                     user#delete
+                     user_show GET    /user/show(.:format)                       user#show
+                    admin_root        /admin(.:format)                           admin/dashboard#index
+                          root        /                                          dashboard#index
+                               POST   /admin/admin_users/batch_action(.:format)  admin/admin_users#batch_action
+                               GET    /admin/admin_users(.:format)               admin/admin_users#index
+                               POST   /admin/admin_users(.:format)               admin/admin_users#create
+                               GET    /admin/admin_users/new(.:format)           admin/admin_users#new
+                               GET    /admin/admin_users/:id/edit(.:format)      admin/admin_users#edit
+                               GET    /admin/admin_users/:id(.:format)           admin/admin_users#show
+                               PUT    /admin/admin_users/:id(.:format)           admin/admin_users#update
+                               DELETE /admin/admin_users/:id(.:format)           admin/admin_users#destroy
+                               POST   /admin/users/batch_action(.:format)        admin/users#batch_action
+                               GET    /admin/users(.:format)                     admin/users#index
+                               POST   /admin/users(.:format)                     admin/users#create
+                               GET    /admin/users/new(.:format)                 admin/users#new
+                               GET    /admin/users/:id/edit(.:format)            admin/users#edit
+                               GET    /admin/users/:id(.:format)                 admin/users#show
+                               PUT    /admin/users/:id(.:format)                 admin/users#update
+                               DELETE /admin/users/:id(.:format)                 admin/users#destroy
+                               POST   /admin/domains/batch_action(.:format)      admin/domains#batch_action
+                               GET    /admin/domains(.:format)                   admin/domains#index
+                               POST   /admin/domains(.:format)                   admin/domains#create
+                               GET    /admin/domains/new(.:format)               admin/domains#new
+                               GET    /admin/domains/:id/edit(.:format)          admin/domains#edit
+                               GET    /admin/domains/:id(.:format)               admin/domains#show
+                               PUT    /admin/domains/:id(.:format)               admin/domains#update
+                               DELETE /admin/domains/:id(.:format)               admin/domains#destroy
+                               POST   /admin/verifies/batch_action(.:format)     admin/verifies#batch_action
+                               GET    /admin/verifies(.:format)                  admin/verifies#index
+                               POST   /admin/verifies(.:format)                  admin/verifies#create
+                               GET    /admin/verifies/new(.:format)              admin/verifies#new
+                               GET    /admin/verifies/:id/edit(.:format)         admin/verifies#edit
+                               GET    /admin/verifies/:id(.:format)              admin/verifies#show
+                               PUT    /admin/verifies/:id(.:format)              admin/verifies#update
+                               DELETE /admin/verifies/:id(.:format)              admin/verifies#destroy
+                                      /admin/dashboard(.:format)                 admin/dashboard#index
+                               POST   /admin/ng_orgs/batch_action(.:format)      admin/ng_orgs#batch_action
+                               GET    /admin/ng_orgs(.:format)                   admin/ng_orgs#index
+                               POST   /admin/ng_orgs(.:format)                   admin/ng_orgs#create
+                               GET    /admin/ng_orgs/new(.:format)               admin/ng_orgs#new
+                               GET    /admin/ng_orgs/:id/edit(.:format)          admin/ng_orgs#edit
+                               GET    /admin/ng_orgs/:id(.:format)               admin/ng_orgs#show
+                               PUT    /admin/ng_orgs/:id(.:format)               admin/ng_orgs#update
+                               DELETE /admin/ng_orgs/:id(.:format)               admin/ng_orgs#destroy
+                               POST   /admin/comments/batch_action(.:format)     admin/comments#batch_action
+                               GET    /admin/comments(.:format)                  admin/comments#index
+                               POST   /admin/comments(.:format)                  admin/comments#create
+                               GET    /admin/comments/:id(.:format)              admin/comments#show
+                               POST   /comments/batch_action(.:format)           comments#batch_action
+                               GET    /comments(.:format)                        comments#index
+                               POST   /comments(.:format)                        comments#create
+                               GET    /comments/:id(.:format)                    comments#show
+                   static_home GET    /static/home(.:format)                     static#home
+                   static_help GET    /static/help(.:format)                     static#help
+                  static_about GET    /static/about(.:format)                    static#about
+              static_contactus GET    /static/contactus(.:format)                static#contactus
+                test_test_user        /test/test_user(.:format)                  test#test_user

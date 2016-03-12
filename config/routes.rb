@@ -1,7 +1,10 @@
 Ecosr::Application.routes.draw do
+  root to: "static#home"
+
   resources :ng_orgs
   resources :domains
 
+  devise_for :users
 
   match "verify/ngo/:registration_number" => "Verifies#show"
 
@@ -18,10 +21,9 @@ Ecosr::Application.routes.draw do
 
   get "user/show"
 
-  devise_for :users
   ActiveAdmin.routes(self)
 
-  root to: "static#home"
+
   
   get "static/home"
   get "static/help"

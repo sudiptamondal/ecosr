@@ -1,0 +1,81 @@
+%nav#topNav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand.page-scroll{:href => "#first"}
+        %i.ion-ios-analytics-outline
+        Landing Zero
+    #bs-navbar.navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li
+          %a.page-scroll{:href => "#one"} Intro
+        %li
+          %a.page-scroll{:href => "#two"} Highlights
+        %li
+          %a.page-scroll{:href => "#three"} Gallery
+        %li
+          %a.page-scroll{:href => "#four"} Features
+        %li
+          %a.page-scroll{:href => "#last"} Contact
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a.page-scroll{"data-toggle" => "modal", :href => "#aboutModal", :title => "A free Bootstrap video landing theme"} About
+#wrapper
+  %h1 Sign Up
+  / %form{:onsubmit => "return false"}
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .col-2
+      %label
+        Name
+        %input#name{:name => "user[first_name]", :placeholder => "What is your full name?", :tabindex => "1"}/
+    .col-2
+      %label
+        Where do you live?
+        / %input#company{:name => "company", :placeholder => "Where do you live?", :tabindex => "2"}/
+        %br
+        = f.text_field :city, placeholder: "city", style:"width:30%"
+        = f.text_field :state, placeholder: "state", style:"width:30%;;margin-left:5%"
+        = f.text_field :country, placeholder: "country", style:"width:30%;margin-left:5%"
+    .col-4
+      %label
+        Phone Number
+        / %input#phone{:name => "phone", :placeholder => "What is the best # to reach you?", :tabindex => "3"}/
+        = f.text_field :contact_number,:placeholder => "What is the best # to reach you?"
+    .col-4
+      %label
+        Email
+        %input#email{:name => "email", :placeholder => "What is your e-mail address?", :tabindex => "4"}/
+    .col-2
+      %label
+        Enter your password
+        %br
+        = f.password_field :password, autocomplete: "off", style: "width:45%;;", placeholder: "password"
+        = f.password_field :password_confirmation, autocomplete: "off", style: "width:45%;margin-left:4%;", placeholder: "confirm password"
+    .col-2
+      %label
+        Domains
+        %input#skills{:name => "skills", :placeholder => "List a few of the domains you are interested in", :tabindex => "6"}/
+    .col-4
+      %label
+        Availability
+        %select{:tabindex => "5", name:"user[availability]"}
+          %option{value:"5-15 hrs per week"} 5-15 hrs per week
+          %option{value:"15-30 hrs per week"} 15-30 hrs per week
+          %option{value:"30-40 hrs per week"} 30-40 hrs per week
+    .col-4.switch
+      %label E-mail Updates?
+      %center{:style => "position:relative;margin-bottom:8px;"}
+        = f.check_box :subscribe_me, class: "js-switch"
+    .col-submit
+      = f.submit "Sign up", class: "submitbtn", style: "background-image: linear-gradient(#97c16b, #8ab959);border-bottom: 1px solid #648c3a;color: white;cursor: pointer;font-size: 17px;height: 37px;margin: 0 auto;width: 30%;"
+:javascript
+  var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+  
+  elems.forEach(function(html) {
+    var switchery = new Switchery(html);
+  });
