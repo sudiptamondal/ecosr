@@ -30,3 +30,4 @@ end
 gem 'haml'
 gem 'devise'
 gem 'annotate'
+gem 'test-unit'
