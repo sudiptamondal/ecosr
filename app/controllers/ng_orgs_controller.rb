@@ -51,6 +51,17 @@ class NgOrgsController < ApplicationController
   # POST /ng_orgs.json
   def create
     @ng_org = NgOrg.new(params[:ng_org])
+    if Verify.where(registration_number: @ng_org.registration_number).blank?
+
+      NgOrgMailer.send_failure(@ng_org).deliver
+    else
+      @ng_org.website = Verify.where(registration_number: @ng_org.registration_number).first.website
+
+      @ng_org.email = Verify.where(registration_number: @ng_org.registration_number).first.email
+
+      NgOrgMailer.send_confirmation(@ng_org).deliver
+
+    end if
 
     respond_to do |format|
       if @ng_org.save
