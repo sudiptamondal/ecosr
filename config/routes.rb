@@ -1,6 +1,6 @@
 Ecosr::Application.routes.draw do
   resources :ngos
-
+  resources :domains
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -24,7 +24,7 @@ Ecosr::Application.routes.draw do
   get "static/contactus"
   
 
-match "test/test_user" => "test#test_user"
+  match "test/test_user" => "test#test_user"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
