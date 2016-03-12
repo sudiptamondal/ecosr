@@ -47,14 +47,14 @@ class NgOrgsController < ApplicationController
     @ng_org = NgOrg.find(params[:id])
   end
 
-  # POST /domains
-  # POST /domains.json
+  # POST /ng_orgs
+  # POST /ng_orgs.json
   def create
-    @ng_org = NgOrg.new(params[:domain])
+    @ng_org = NgOrg.new(params[:ng_org])
 
     respond_to do |format|
       if @ng_org.save
-        format.html { redirect_to @ng_org, notice: 'Domain was successfully created.' }
+        format.html { redirect_to @ng_org, notice: 'NGO was successfully created.' }
         format.json { render json: @ng_org, status: :created, location: @ng_org }
       else
         format.html { render action: "new" }

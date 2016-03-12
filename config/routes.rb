@@ -3,7 +3,7 @@ Ecosr::Application.routes.draw do
   resources :domains
 
 
-  get "verify/ngo/:registration_number" => "Verifies#show"
+  match "verify/ngo/:registration_number" => "Verifies#show"
 
   match "ngos/find/:domain" => "NgOrgs#find_ngos_by_domain"
 
