@@ -20,7 +20,6 @@ gem 'jquery-rails'
 
 
 group :development do
-  gem 'thin'
   gem 'sqlite3'
   gem 'better_errors'
   gem 'html2haml'
@@ -31,3 +30,4 @@ gem 'haml'
 gem 'devise'
 gem 'annotate'
 gem 'test-unit'
+gem 'thin'
