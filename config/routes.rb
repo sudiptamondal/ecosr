@@ -1,4 +1,7 @@
 Ecosr::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   post "user/create"
 
   get "user/update"
@@ -8,6 +11,7 @@ Ecosr::Application.routes.draw do
   get "user/show"
 
   devise_for :users
+  ActiveAdmin.routes(self)
 
   root to: "static#home"
   
