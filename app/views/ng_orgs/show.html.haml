@@ -1,0 +1,43 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @ng_org.name
+%p
+  %b Address line1:
+  = @ng_org.address_line1
+%p
+  %b Address line2:
+  = @ng_org.address_line2
+%p
+  %b City:
+  = @ng_org.city
+%p
+  %b State:
+  = @ng_org.state
+%p
+  %b Country:
+  = @ng_org.country
+%p
+  %b Registration date:
+  = @ng_org.registration_date
+%p
+  %b Registration number:
+  = @ng_org.registration_number
+%p
+  %b Domain:
+  = @ng_org.domain
+%p
+  %b Mobile:
+  = @ng_org.mobile
+%p
+  %b Email:
+  = @ng_org.email
+%p
+  %b Password:
+  = @ng_org.password
+%p
+  %b Website:
+  = @ng_org.website
+= link_to 'Edit', edit_ng_org_path(@ng_org)
+|
+= link_to 'Back', ng_orgs_path

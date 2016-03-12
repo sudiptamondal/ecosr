@@ -1,0 +1,11 @@
+= form_for(@verify) do |f|
+  - if @verify.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@verify.errors.count, "error")
+        prohibited this verify from being saved:
+      %ul
+        - @verify.errors.full_messages.each do |msg|
+          %li= msg
+  .actions
+    = f.submit

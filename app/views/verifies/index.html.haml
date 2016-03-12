@@ -1,0 +1,13 @@
+%h1 Listing verifies
+%table
+  %tr
+    %th
+    %th
+    %th
+  - @verifies.each do |verify|
+    %tr
+      %td= link_to 'Show', verify
+      %td= link_to 'Edit', edit_verify_path(verify)
+      %td= link_to 'Destroy', verify, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Verify', new_verify_path

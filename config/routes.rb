@@ -2,6 +2,11 @@ Ecosr::Application.routes.draw do
   resources :ng_orgs
   resources :domains
 
+
+  get "verify/ngo/:registration_number" => "Verifies#show"
+
+  match "ngos/find/:domain" => "NgOrgs#find_ngos_by_domain"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

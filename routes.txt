@@ -12,6 +12,7 @@
                         domain GET    /domains/:id(.:format)                    domains#show
                                PUT    /domains/:id(.:format)                    domains#update
                                DELETE /domains/:id(.:format)                    domains#destroy
+                                      /ngos/find/:domain(.:format)              NgOrgs#find_ngos_by_domain
         new_admin_user_session GET    /admin/login(.:format)                    active_admin/devise/sessions#new
             admin_user_session POST   /admin/login(.:format)                    active_admin/devise/sessions#create
     destroy_admin_user_session GET    /admin/logout(.:format)                   active_admin/devise/sessions#destroy

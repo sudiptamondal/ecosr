@@ -1,0 +1,39 @@
+%h1 Listing ng_orgs
+%table
+  %tr
+    %th Name
+    %th Address line1
+    %th Address line2
+    %th City
+    %th State
+    %th Country
+    %th Registration date
+    %th Registration number
+    %th Domain
+    %th Mobile
+    %th Email
+    %th Password
+    %th Website
+    %th
+    %th
+    %th
+  - @ng_orgs.each do |ng_org|
+    %tr
+      %td= ng_org.name
+      %td= ng_org.address_line1
+      %td= ng_org.address_line2
+      %td= ng_org.city
+      %td= ng_org.state
+      %td= ng_org.country
+      %td= ng_org.registration_date
+      %td= ng_org.registration_number
+      %td= ng_org.domain
+      %td= ng_org.mobile
+      %td= ng_org.email
+      %td= ng_org.password
+      %td= ng_org.website
+      %td= link_to 'Show', ng_org
+      %td= link_to 'Edit', edit_ng_org_path(ng_org)
+      %td= link_to 'Destroy', ng_org, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Ng org', new_ng_org_path

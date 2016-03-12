@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: verifies
+#
+#  id                  :integer          not null, primary key
+#  registration_number :string(255)
+#  email               :string(255)
+#  website             :string(255)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  registration_number: MyString
+  email: MyString
+  website: MyString
+
+two:
+  registration_number: MyString
+  email: MyString
+  website: MyString

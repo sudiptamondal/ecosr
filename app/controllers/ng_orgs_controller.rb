@@ -10,6 +10,16 @@ class NgOrgsController < ApplicationController
     end
   end
 
+  # GET /domains/sector/:domain
+
+  def find_ngos_by_domain
+    @ng_orgs = NgOrg.where("domain like ? ", "#{params[:domain]}")
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @ng_orgs }
+    end
+  end
+
   # GET /domains/1
   # GET /domains/1.json
   def show
