@@ -7,14 +7,13 @@ one:
   city: MyString
   state: MyString
   country: MyString
-  pincode: MyString
-  registration_date: 2016-03-12
+  registration_date: MyString
   registration_number: MyString
-  domain_id: 1
-  contact_number: MyString
-  website: MyString
+  domain: MyString
+  mobile: MyString
   email: MyString
   password: MyString
+  website: MyString
 
 two:
   name: MyString
@@ -23,11 +22,10 @@ two:
   city: MyString
   state: MyString
   country: MyString
-  pincode: MyString
-  registration_date: 2016-03-12
+  registration_date: MyString
   registration_number: MyString
-  domain_id: 1
-  contact_number: MyString
-  website: MyString
+  domain: MyString
+  mobile: MyString
   email: MyString
   password: MyString
+  website: MyString

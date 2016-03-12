@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class NgoTest < ActiveSupport::TestCase
+class NgOrgTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

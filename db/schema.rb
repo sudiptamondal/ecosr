@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160312122803) do
+ActiveRecord::Schema.define(:version => 20160312124728) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -50,6 +50,24 @@ ActiveRecord::Schema.define(:version => 20160312122803) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "name"
+  end
+
+  create_table "ng_orgs", :force => true do |t|
+    t.string   "name"
+    t.string   "address_line1"
+    t.string   "address_line2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "registration_date"
+    t.string   "registration_number"
+    t.string   "domain"
+    t.string   "mobile"
+    t.string   "email"
+    t.string   "password"
+    t.string   "website"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "ngos", :force => true do |t|

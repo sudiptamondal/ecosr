@@ -1,4 +1,7 @@
 Ecosr::Application.routes.draw do
+  resources :ng_orgs
+
+
   resources :ngos
   resources :domains
 
