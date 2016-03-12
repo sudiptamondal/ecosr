@@ -43,9 +43,9 @@ Ecosr::Application.configure do
     # :enable_starttls_auto => true,  
     :address            => 'smtp.gmail.com',
     :port               => 465,
-    :tls                  => true,
+    # :tls                  => true,
     :domain             => 'gmail.com', #you can also use google.com
-    :authentication     => :plain,
+    :authentication     => :login,
     :user_name          => 'chdhackathon@gmail.com',
     :password           => 'chdhackathon1',
     :openssl_verify_mode  => 'none'
