@@ -1,4 +1,5 @@
 Ecosr::Application.configure do
+  require 'tlsmail'
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -35,7 +36,7 @@ Ecosr::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true

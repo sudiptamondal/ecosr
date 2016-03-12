@@ -1,4 +1,5 @@
 Ecosr::Application.configure do
+  require 'tlsmail'
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -68,7 +69,7 @@ Ecosr::Application.configure do
 
 
   config.action_mailer.default_url_options = { host: 'boiling-brushlands-95795.herokuapp.com' }
-
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true
