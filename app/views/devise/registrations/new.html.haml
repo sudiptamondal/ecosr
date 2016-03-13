@@ -24,8 +24,52 @@
       %ul.nav.navbar-nav.navbar-right
         %li
           %a.page-scroll{"data-toggle" => "modal", :href => "#aboutModal", :title => "A free Bootstrap video landing theme"} About
-#wrapper#one
-#wrapper#two
+#wrapper#zero.pull-left{style:"margin-top:10%;width:100%"}
+  %div.pull-left{style:"width:45%;margin:0 auto;"}
+    %p{style:"margin-left:5%;"}
+      Sample Text explaining the features of the application
+    %ul
+      %li
+        Feature 1
+      %li
+        Feature 2
+      %li
+        Feature 3
+      %li
+        Feature 4
+      %li
+        Feature 5
+  %div.pull-left{style:"width:45%;margin:0 auto"}
+    %button.btn.btn-default.btn-lg#sign_in_button{:type => "button", style:"line-height:10px;"} Login
+    %button.btn.btn-default.btn-lg#sign_up_button{:type => "button", style:";margin-top:2%;line-height:10px;"} Sign up
+#wrapper#one.hidden{style:"margin-top:5%;width:100%;"}
+  %h1 Login
+  .col-2.pull-left{style:"margin-left:2%;border:1px solid lightgrey;padding:10px;"}
+    Features you get after you login 
+    %ul
+      %li
+        Feature 1
+      %li
+        Feature 2
+      %li 
+        Feature 3
+      %li 
+        Feature 4
+      %li 
+        Feature 4
+  .col-2.pull-left{style:"width:45%"}
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: {style:"margin:0 auto;padding:10px;"}) do |f|
+      %label{style: "font-size:13px;"}
+        Email
+        = f.email_field :email, autofocus: true, style:"margin-left:12%;width:60%;"
+      %br
+      %label{style: "font-size:13px;"}
+        Password
+        = f.password_field :password, autocomplete: "off", style:"margin-left:5%;width:60%;"
+      %br
+      .actions
+        = f.submit "Log in", style: "font-size:15px;margin-left:20%", class: "btn"
+#wrapper#two.hidden
   %h1 Sign Up
   / %form{:onsubmit => "return false"}
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -74,6 +118,7 @@
         = f.check_box :subscribe_me, class: "js-switch"
     .col-submit
       = f.submit "Sign up", class: "submitbtn", style: "background-image: linear-gradient(#97c16b, #8ab959);border-bottom: 1px solid #648c3a;color: white;cursor: pointer;font-size: 17px;height: 37px;margin: 0 auto;width: 30%;"
+      %button.btn.btn-default.btn-lg#go_back{:type => "button", style:"line-height:10px;float:right;"} Go Back
 :javascript
   var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
   

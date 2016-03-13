@@ -37,8 +37,8 @@ Ecosr::Application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
   ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.perform_deliveries = true
-  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.perform_deliveries = false
+  ActionMailer::Base.raise_delivery_errors = false
   ActionMailer::Base.smtp_settings = {
     # :enable_starttls_auto => true,  
     :address            => 'smtp.gmail.com',

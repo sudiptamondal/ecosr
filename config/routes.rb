@@ -1,6 +1,8 @@
 Ecosr::Application.routes.draw do
   root to: "static#home"
 
+  match "ngos/:domain" => "NgOrgs#find_ngos_by_domain"
+  
   resources :ng_orgs
   resources :domains
 
@@ -8,7 +10,6 @@ Ecosr::Application.routes.draw do
 
   match "verify/ngo/:registration_number" => "Verifies#show"
 
-  match "ngos/find/:domain" => "NgOrgs#find_ngos_by_domain"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -23,7 +24,14 @@ Ecosr::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
+  match "/login" => "UserLogin#login"
+  match "/signup" => "UserLogin#signup"
+  match "/event" => "Events#create"
 
+  match "/events/:id" => "Events#show"
+
+
+  match "ng_org/create" => "NgOrgs#create"
   
   get "static/home"
   get "static/help"

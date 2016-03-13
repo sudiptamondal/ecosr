@@ -4,9 +4,11 @@ class DomainsController < ApplicationController
   def index
     @domains = Domain.all
 
+    @data = "#{params[:callback]}(#{@domains.to_json});"
+
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @domains }
+      format.json { render text: @data }
     end
   end
 

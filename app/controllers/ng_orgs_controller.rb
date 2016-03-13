@@ -4,7 +4,7 @@ class NgOrgsController < ApplicationController
   def index
     @ng_orgs = NgOrg.all
 
-    @data = "JSON_CALLBACK([#{@ng_orgs.to_json}]);"
+    @data = "#{params[:callback]}(#{@ng_orgs.to_json});"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,10 +15,13 @@ class NgOrgsController < ApplicationController
   # GET /domains/sector/:domain
 
   def find_ngos_by_domain
-    @ng_orgs = NgOrg.where("domain like ? ", "#{params[:domain]}")
+    @ng_orgs = NgOrg.where("domain like ? ", "%#{params[:domain]}%")
+
+    @data = "#{params[:callback]}(#{@ng_orgs.to_json});"
+
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @ng_orgs }
+      format.json { render text: @data }
     end
   end
 
@@ -27,9 +30,11 @@ class NgOrgsController < ApplicationController
   def show
     @ng_org = NgOrg.find(params[:id])
 
+    @data = "#{params[:callback]}(#{@ng_org.to_json});"
+
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @ng_org }
+      format.json { render text: @data }
     end
   end
 
@@ -52,23 +57,20 @@ class NgOrgsController < ApplicationController
   # POST /ng_orgs
   # POST /ng_orgs.json
   def create
-    @ng_org = NgOrg.new(params[:ng_org])
-    if Verify.where(registration_number: @ng_org.registration_number).blank?
+    @ng_org = NgOrg.new(JSON.parse (params[:data]))
 
-      NgOrgMailer.send_failure(@ng_org).deliver
-    else
-      @ng_org.website = Verify.where(registration_number: @ng_org.registration_number).first.website
-
-      @ng_org.email = Verify.where(registration_number: @ng_org.registration_number).first.email
-
+    begin
       NgOrgMailer.send_confirmation(@ng_org).deliver
-
-    end if
+    rescue Exception => e
+      Rails.logger.debug e.message
+    end
+    
+    @data = "#{params[:callback]}{'true':'true'};"
 
     respond_to do |format|
       if @ng_org.save
         format.html { redirect_to @ng_org, notice: 'NGO was successfully created.' }
-        format.json { render json: @ng_org, status: :created, location: @ng_org }
+        format.json { render json: @data, status: :created, location: @ng_org }
       else
         format.html { render action: "new" }
         format.json { render json: @ng_org.errors, status: :unprocessable_entity }

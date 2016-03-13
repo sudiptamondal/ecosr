@@ -15,15 +15,17 @@ class VerifiesController < ApplicationController
   def show
     @verify = Verify.where(registration_number: params[:registration_number])
 
+    @data = "#{params[:callback]}(#{@verify.to_json});"
+
     if @verify.blank?
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render json: @verify }
+        format.json { render json: @data }
       end
     else
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render json: @verify }
+        format.json { render json: @data }
       end
     end
   end
